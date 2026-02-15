@@ -1,0 +1,72 @@
+[
+  {
+    "context": "Editor && VimControl && !VimWaiting && !menu",
+    "bindings": {
+      "ctrl-l": "pane::ActivateNextItem",
+      "ctrl-h": "pane::ActivatePreviousItem",
+      "ctrl-shift-v": "vim::Paste",
+      "space w": "workspace::Save",
+      "alt-i": "terminal_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "alt-i": "workspace::ToggleBottomDock",
+      "alt-t": "workspace::NewCenterTerminal",
+      "ctrl-l": "pane::ActivateNextItem",
+      "ctrl-h": "pane::ActivatePreviousItem"
+    }
+  },
+  {
+    "bindings": {
+      "ctrl-alt-i": [
+        "workspace::NewTerminal",
+        {
+          "cwd": "Workspace"
+        }
+      ],
+      "alt-k u": "pane::CloseCleanItems",
+      "ctrl-j": "editor::ContextMenuNext",
+      "ctrl-k": "editor::ContextMenuPrevious",
+      "ctrl-e": "project_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "Editor && vim_mode==normal",
+    "bindings": {
+      "space e": "project_panel::ToggleFocus"
+    }
+  },
+  {
+    "bindings": {
+      "ctrl-j": "menu::SelectNext",
+      "ctrl-k": "menu::SelectPrevious"
+    }
+  },
+  {
+    "context": "!Editor && not_editing",
+    "bindings": {
+      "space e": "project_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "a": "project_panel::NewFile",
+      "f": "project_panel::NewDirectory",
+      "c": "project_panel::Copy",
+      "r": "project_panel::Rename",
+      "d": "project_panel::Delete",
+      "x": "project_panel::Cut",
+      "p": "project_panel::Paste",
+      "D": ["project_panel::Delete", { "skip_prompt": true }]
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual && !VimWaiting && !VimObject",
+    "bindings": {
+      "p": ["vim::Paste", { "preserve_clipboard": true }]
+    }
+  }
+]
